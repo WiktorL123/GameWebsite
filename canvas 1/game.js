@@ -1,3 +1,5 @@
+
+import {Randomizer} from './Randomizer.js'
 const canvas=document.getElementById("game_canvas")
 const ctx=canvas.getContext("2d")
 
@@ -14,44 +16,44 @@ const  none = new Image(50, 50); none.src="assets/none.png"
 
 
 
-// let colors = ["firebrick", "seagreen", "dodgerblue", "orange", "yellow", "sienna", "magenta", "gray"];
-let colors=createColors()
+ let colors = ["firebrick", "seagreen", "dodgerblue", "orange", "yellow", "sienna", "magenta", "gray"];
+//let colors=createColors()
 let solution = []
 let state = ["empty", "empty", "empty", "empty", "empty"];
 
 
 
-function getRandomIndex(max){
-    return Math.floor(Math.random()*max)
-}
-
-
-function getRandomColor() {
-    if(colors.length===0){
-        return null
-    }
-    const randomIndex=getRandomIndex(colors.length)
-    const randomColor=colors[randomIndex]
-    colors.splice(randomIndex, 1)
-    return randomColor
-
-}
-function generateRandomColors(){
-    const letters = '0123456789ABCDEF';
-    let color = '#';
-    for (let i = 0; i < 6; i++) {
-        color += letters[Math.floor(Math.random() * 16)];
-    }
-    return color;
-}
-function createColors(){
-    const colors = [];
-    for (let i = 0; i < 8; i++) {
-        const randomColor = generateRandomColors();
-        colors.push(randomColor);
-    }
-    return colors;
-}
+// function getRandomIndex(max){
+//     return Math.floor(Math.random()*max)
+// }
+//
+//
+// function getRandomColor() {
+//     if(colors.length===0){
+//         return null
+//     }
+//     const randomIndex=getRandomIndex(colors.length)
+//     const randomColor=colors[randomIndex]
+//     colors.splice(randomIndex, 1)
+//     return randomColor
+//
+// }
+// function generateRandomColors(){
+//     const letters = '0123456789ABCDEF';
+//     let color = '#';
+//     for (let i = 0; i < 6; i++) {
+//         color += letters[Math.floor(Math.random() * 16)];
+//     }
+//     return color;
+// }
+// function createColors(){
+//     const colors = [];
+//     for (let i = 0; i < 8; i++) {
+//         const randomColor = generateRandomColors();
+//         colors.push(randomColor);
+//     }
+//     return colors;
+// }
 
 for(let i=0; i<8; i++){
     let name="#c"+(i+1);
@@ -203,7 +205,7 @@ function startBoard(){
     }
 
     for (let i = 0; i < 5; i++) {
-        let color=getRandomColor()
+        let color=Randomizer.getRandomColor()
         if(color!==null){
             solution.push(color)
         }
