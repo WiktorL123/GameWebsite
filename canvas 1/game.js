@@ -1,5 +1,8 @@
 
 import {Randomizer} from './Randomizer.js'
+import {RandomSolutionGenerator} from "./RandomSolutionGenerator";
+
+
 const canvas=document.getElementById("game_canvas")
 const ctx=canvas.getContext("2d")
 
@@ -16,28 +19,14 @@ const  none = new Image(50, 50); none.src="assets/none.png"
 
 
 
- let colors = ["firebrick", "seagreen", "dodgerblue", "orange", "yellow", "sienna", "magenta", "gray"];
-//let colors=createColors()
+ //let colors = ["firebrick", "seagreen", "dodgerblue", "orange", "yellow", "sienna", "magenta", "gray"];
+let colors=RandomSolutionGenerator.createColors()
 let solution = []
 let state = ["empty", "empty", "empty", "empty", "empty"];
 
 
 
-// function getRandomIndex(max){
-//     return Math.floor(Math.random()*max)
-// }
-//
-//
-// function getRandomColor() {
-//     if(colors.length===0){
-//         return null
-//     }
-//     const randomIndex=getRandomIndex(colors.length)
-//     const randomColor=colors[randomIndex]
-//     colors.splice(randomIndex, 1)
-//     return randomColor
-//
-// }
+
 // function generateRandomColors(){
 //     const letters = '0123456789ABCDEF';
 //     let color = '#';

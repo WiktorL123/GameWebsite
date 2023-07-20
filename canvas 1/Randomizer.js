@@ -1,7 +1,8 @@
+import {RandomSolutionGenerator} from "./RandomSolutionGenerator";
 
 export class Randomizer {
-    static colors = ["firebrick", "seagreen", "dodgerblue", "orange", "yellow", "sienna", "magenta", "gray"];
-
+    //static colors = ["firebrick", "seagreen", "dodgerblue", "orange", "yellow", "sienna", "magenta", "gray"];
+    static colors=RandomSolutionGenerator.createColors()
     static _getRandomIndex(max) {
         return Math.floor(Math.random() * max);
     }
