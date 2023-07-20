@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Generowanie losowych kolorów</title>
+</head>
+<body>
+<script>
+    // Funkcja generująca losowy kolor w formacie szesnastkowym
+    function getRandomColor() {
+        const letters = '0123456789ABCDEF';
+        let color = '#';
+        for (let i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
+
+    // Funkcja generująca 8 losowych kolorów i zapisująca je do tablicy
+    function generateRandomColors() {
+        const colors = [];
+        for (let i = 0; i < 8; i++) {
+            const randomColor = getRandomColor();
+            colors.push(randomColor);
+        }
+        return colors;
+    }
+
+    // Wywołanie funkcji i zapisanie wyniku do zmiennej
+    const generatedColors = generateRandomColors();
+
+    console.log(generatedColors);
+</script>
+</body>
+</html>
